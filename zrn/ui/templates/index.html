@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZRN Terminal — ByteBell Software</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <!-- ── HOME SCREEN ─────────────────────────────────────────────── -->
+  <div id="screen-home" class="screen active">
+    <div class="terminal-card">
+      <div class="header">
+        <div class="header-left">
+          <div class="student-name" id="home-name">Scan je druppel</div>
+          <div class="student-sub" id="home-sub">of typ je leerlingnummer</div>
+        </div>
+        <div class="logo">
+          <img src="/static/img/wvoc-logo.png" width="44" height="44" alt="Willem van Oranje College">
+        </div>
+      </div>
+
+      <div class="lesson-list" id="lesson-list">
+        <!-- Lessons are loaded here dynamically -->
+        <div class="placeholder-msg">
+          <span class="placeholder-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="5" y1="14" x2="10" y2="14"/></svg></span>
+          <p>Leg je druppel op de scanner</p>
+          <p class="keyboard-hint">of typ je leerlingnummer op het toetsenbord</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="bytebell-brand">
+          <span class="bb-powered">Powered by</span>
+          <span class="bb-name">BYTE BELL SOFTWARE</span>
+          <span class="bb-mascot">&Oslash;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NUMPAD SCREEN ───────────────────────────────────────────── -->
+  <div id="screen-numpad" class="screen">
+    <div class="terminal-card">
+      <div class="header">
+        <div class="header-left">
+          <div class="student-name">Leerlingnummer</div>
+          <div class="student-sub">Typ je nummer op het toetsenbord</div>
+        </div>
+        <div class="logo">
+          <img src="/static/img/wvoc-logo.png" width="44" height="44" alt="Willem van Oranje College">
+        </div>
+      </div>
+
+      <div class="numpad-display" id="numpad-display">_</div>
+
+      <p class="keyboard-hint">Backspace = wissen · Enter = bevestigen · Esc = terug</p>
+
+      <div class="footer">
+        <div class="bytebell-brand">
+          <span class="bb-powered">Powered by</span>
+          <span class="bb-name">BYTE BELL SOFTWARE</span>
+          <span class="bb-mascot">&Oslash;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCHEDULE SCREEN ─────────────────────────────────────────── -->
+  <div id="screen-rooster" class="screen">
+    <div class="terminal-card">
+      <div class="header">
+        <div class="header-left">
+          <div class="student-name" id="r-naam-klas">—</div>
+          <div class="student-sub" id="r-lnr">—</div>
+        </div>
+        <div class="logo">
+          <img src="/static/img/wvoc-logo.png" width="44" height="44" alt="Willem van Oranje College">
+        </div>
+      </div>
+
+      <div class="lesson-list" id="r-lessons"></div>
+
+      <div class="footer">
+        <div class="bytebell-brand">
+          <span class="bb-powered">Powered by</span>
+          <span class="bb-name">BYTE BELL SOFTWARE</span>
+          <span class="bb-mascot">&Oslash;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ENROLLMENT MODAL ────────────────────────────────────────── -->
+  <div id="enrollment-modal" class="modal-overlay" hidden>
+    <div class="modal-card">
+      <div class="modal-title">Onbekende druppel</div>
+      <div class="modal-sub">UID: <span id="enroll-uid"></span></div>
+      <div class="modal-sub">Typ je leerlingnummer op het toetsenbord om te registreren:</div>
+      <div class="numpad-display" id="enroll-display">_</div>
+      <p class="keyboard-hint">Backspace = wissen · Enter = bevestigen · Esc = annuleren</p>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

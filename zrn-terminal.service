@@ -1,0 +1,17 @@
+[Unit]
+Description=ZRN Schedule Terminal — ByteBell Software
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/project-zrn
+ExecStart=/home/pi/project-zrn/venv/bin/python app.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

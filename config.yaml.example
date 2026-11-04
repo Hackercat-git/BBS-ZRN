@@ -1,0 +1,4 @@
+school: "wvoo"          # Zermelo school name (subdomain on zportal.nl)
+zermelo_token: ""       # Zermelo API token — exchange a pairing code via wvoo.zportal.nl (Settings > Connections)
+debug: false
+port: 5000
